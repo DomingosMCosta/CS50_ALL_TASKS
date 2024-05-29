@@ -1,0 +1,5 @@
+Their audio aura has an average of 0.71646 of danceability, 0.65906 of energy, -5.67764 of loudness, 0.115569 of speechiness,
+0.484443 of valence, 119.90418 of tempo and 205206.78 duration is ms.
+
+This way is not very representative for the listner because these values are an average of all songs, from different styles and
+ranges. A better way would be to insert a new field that would represent the style of the music (like Pop, rock, etc).

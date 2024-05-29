@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+        <h2>Index</h2>
+        <table style="margin-bottom: 20px;">
+            </tbody>
+            <thead>
+                <tr>
+                    <th>Wallet Cash</th>
+                    <th>Total Value stocks</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for money in wallet %}
+                <tr>
+                    <td>{{ usd(money["cash"]) }}</td>
+                    <td>{{ usd(money["Total_value_stocks"]) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+         </table>
+         <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Current Market Price</th>
+                    <th>Current total value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock.stock }}</td>
+                    <td>{{ stock.total|string}}</td>
+                    <td>{{ usd(stock["current_price"]) }}</td>
+                    <td>{{ usd(stock["total_value"]) }}</td>
+                    <td>
+                        <form action="/" method="post" class="test">
+                            <input type="hidden" name="stock" value="{{ stock.stock }}">
+                            <input class="form-control" name="quantity" placeholder="Quantity" type="number" style="width:102px;">
+                            <button class="btn btn-primary" type="submit">Buy</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+        </table>
+        <div >
+            {% if unsuccess %}
+
+                        <div id="unsuccess-message" style="position: absolute; right: 410px; top: 280px; width: 100px">
+                            {{ unsuccess|safe }}
+                        </div>
+            {% endif %}
+
+            {% if success %}
+                        <div id="success-message" style="position: absolute; right: 410px; top: 300px; width: 100px">
+                            {{ success|safe }}
+                        </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+{% endblock %}
+
+

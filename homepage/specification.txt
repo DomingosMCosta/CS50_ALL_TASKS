@@ -1,0 +1,51 @@
+HTML tags:
+<!DOCTYPE html>
+<html>
+<head>
+<meta>
+<link>
+<script>
+<style>
+<title>
+<body>
+<div>
+<button>
+<img>
+<a>
+<h1>
+<h4>
+<iframe>
+<ul>
+<li>
+<figure>
+
+
+CSS properties:
+background-color
+color
+position
+height
+max-width
+margin-left
+margin-right
+margin-bottom
+margin-top
+margin
+padding-left
+padding-right
+padding
+z-index
+text-align
+display
+left
+width
+opacity
+transition
+display
+flex-wrap
+justify-content
+position
+
+I used bootstrap to implement the carousel in index.html, dropdown list in career.html
+One example I used JavaScript was in index.html with 'DOMContentLoaded'to make sure all the pictures for the carousel are loaded correctly
+

@@ -1,0 +1,176 @@
+.page1 {
+    background-color: #0F1720;
+    color: #121211;
+}
+
+.page2 {
+    background-color: #0F1720;
+    color: #0F1720;
+}
+
+.page3 {
+    background-color: #307A77;
+    color: #0F1720;
+    position: relative;
+}
+
+.page4 {
+    background-color: #121211;
+    color: #0F1720;
+    height: 100%;
+}
+
+.htmlpassion{
+    height: 100%;
+    background: transparent;;
+}
+
+.carousel-inner {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.myself {
+    background-color: #0F1720;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.listing {
+    background-color: #307A77;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+
+.iframe {
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+
+.video {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+
+}
+
+.green {
+    background-color: #006600;
+    left: 0;
+    width: 35%;
+}
+
+.red {
+    background-color: #FE0000;
+    left: 35%;
+    width: 65%
+}
+
+
+
+.green, .red {
+    position: absolute;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    z-index: 1;
+}
+
+.buttons {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.buttons2 {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.buttons3 {
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+.buttons3 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+}
+
+
+figure {
+    margin-bottom: 50px;
+    margin-right: 20px;
+}
+
+.languages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    text-align: center;
+}
+
+.companies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    text-align: center;
+}
+
+.education {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    text-align: center;
+}
+
+
+
+/*This method works, but I prefer horizontally
+.education, .companies {
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
+
+

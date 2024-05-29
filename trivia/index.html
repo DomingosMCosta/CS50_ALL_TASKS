@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+                let button1 = document.querySelector('#button1');
+                let button2 = document.querySelector('#button2');
+                let button3 = document.querySelector('#button3');
+                let button4 = document.querySelector('#button4');
+                let buttons = document.querySelectorAll('.buttons button');
+                let buttonsArray = Array.from(buttons);
+                buttonsArray.push(button5);
+                let answerField = document.querySelector('#AnswerID');
+
+                buttonsArray.forEach(function(button){
+                    button.addEventListener('mouseover', function() {
+                        this.style.border = '2px solid grey';
+                    });
+
+                    button.addEventListener('mouseout', function() {
+                        this.style.border = '';
+                    });
+                });
+                button1.addEventListener('click', function() {
+                    var clickedButton = this;
+                    document.getElementById('message1').textContent = 'Incorrect';
+                    clickedButton.style.backgroundColor='red';
+                    window.scrollTo(0,document.body.scrollHeight);
+                    buttonsArray.forEach(function(button) {
+                        if (button !== clickedButton) {
+                            button.style.backgroundColor = '';
+                        }
+                    });
+                });
+            })
+                button2.addEventListener('click', function() {
+                    var clickedButton = this;
+                    document.getElementById('message1').textContent = 'Incorrect';
+                    clickedButton.style.backgroundColor='red';
+                    window.scrollTo(0,document.body.scrollHeight);
+                    buttonsArray.forEach(function(button) {
+                        if (button !== clickedButton) {
+                            button.style.backgroundColor = '';
+                        }
+                    });
+                });
+
+                button3.addEventListener('click', function() {
+                    var clickedButton = this;
+                    document.getElementById('message1').textContent = 'Correct!';
+                    clickedButton.style.backgroundColor='green';
+                    window.scrollTo(0,document.body.scrollHeight);
+                    buttonsArray.forEach(function(button) {
+                        if (button !== clickedButton) {
+                            button.style.backgroundColor = '';
+                        }
+                    });
+                });
+
+                button4.addEventListener('click', function() {
+                    var clickedButton = this;
+                    document.getElementById('message1').textContent = 'Incorrect';
+                    clickedButton.style.backgroundColor='red';
+                    window.scrollTo(0,document.body.scrollHeight);
+                    buttonsArray.forEach(function(button) {
+                        if (button !== clickedButton) {
+                            button.style.backgroundColor = '';
+                        }
+                    });
+                });
+
+                document.querySelector('form').addEventListener('submit', function(e) {
+                    let answer = document.querySelector('#AnswerID').value.toLowerCase();
+                    if (answer == 'kangaroos' || answer == 'kangaroo') {
+                        answerField.style.backgroundColor = 'green';
+                        document.getElementById('message2').textContent = 'Correct!';
+                        window.scrollTo(0,document.body.scrollHeight);
+                    }
+                    else {
+                        answerField.style.backgroundColor = 'red';
+                        document.getElementById('message2').textContent = 'Incorrect';
+                        window.scrollTo(0,document.body.scrollHeight);
+                    }
+
+                    e.preventDefault();
+                });
+    
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                    <h3>What's the ratio of kangaroos to humans in Australia? </h3>
+                    <p id="message1"></p>
+                    <div class='buttons'>
+                        <button type="button" id="button1">1 kangaroo per 2 humans</button>
+                        <button type="button" id="button2">1 kangaroo per 1 human</button>
+                        <button type="button" id="button3">2 kangaroos per 1 human</button>
+                        <button type="button" id="button4">4 kangaroos per 1 human</button>
+                    </div>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                    <h3>Who would win in case of war between kangaroos and humans in Australia?</h3>
+                        <form>
+                            <p id="message2"></p>
+                            <input autocomplete="off" autofocus id="AnswerID" placeholder="Answer" type="text">
+                            <input type="submit" id ="button5">
+                        </form>
+            </div>
+        </div>
+    </body>
+</html>
