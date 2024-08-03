@@ -1,4 +1,4 @@
-#include <cs50.h>
+//#include <cs50.h>
 #include <stdio.h>
 
 int main(void)
@@ -9,7 +9,8 @@ int main(void)
     long sum_numbers = 0;
     int counter_sum = 0;
     long y;
-    n = get_long("Number: ");
+    printf("Number: ");
+    scanf("%ld", &n);
     reduce = n;
     // Luhn algorithm loop
     do
