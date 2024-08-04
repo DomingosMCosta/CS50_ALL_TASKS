@@ -1,16 +1,28 @@
-#include <cs50.h>
 #include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>  // For malloc and free
 
-int *extract_values(string word, int n, int extractions[3]);
+int *extract_values(char *word, int n, int extractions[3]);
 
 int main(void)
 {
-    string text_input = get_string("Text: ");
-    int n1;
-    n1 = strlen(text_input);
+    // Allocate a buffer for user input
+    char text_input[1000];
+    
+    // Prompt user for text input
+    printf("Text: ");
+    if (fgets(text_input, sizeof(text_input), stdin) == NULL)
+    {
+        printf("Error reading input.\n");
+        return 1;
+    }
+
+    // Remove the newline character if present
+    text_input[strcspn(text_input, "\n")] = '\0';
+
+    int n1 = strlen(text_input);
     int final[3];
     extract_values(text_input, n1, final);
 
@@ -30,29 +42,37 @@ int main(void)
     {
         printf("Grade %li\n", lround(index));
     }
+
+    return 0;
 }
 
-int *extract_values(string word, int n, int extractions[3])
+int *extract_values(char *word, int n, int extractions[3])
 {
-
-    extractions[0] = 0;
-    extractions[1] = 1;
-    extractions[2] = 0;
+    extractions[0] = 0;  // Letters
+    extractions[1] = 0;  // Words
+    extractions[2] = 0;  // Sentences
 
     for (int i = 0; i < n; i++)
     {
-        if (isupper(word[i]) || islower(word[i]))
+        if (isalpha(word[i]))
         {
             extractions[0]++;
         }
-        if (word[i] == 32)
+        if (isspace(word[i]))
         {
             extractions[1]++;
         }
-        if (word[i] == 63 || word[i] == 33 || word[i] == 46)
+        if (word[i] == '?' || word[i] == '!' || word[i] == '.')
         {
             extractions[2]++;
         }
     }
+    
+    // Ensure words count includes the last word
+    if (n > 0 && !isspace(word[n - 1]))
+    {
+        extractions[1]++;
+    }
+
     return extractions;
 }

@@ -1,4 +1,3 @@
-#include <cs50.h>
 #include <stdio.h>
 
 int main(void)
@@ -10,7 +9,8 @@ int main(void)
     // Prompt user to give a positive integer
     do
     {
-        n = get_int("Size: ");
+        printf("Size: ");
+        scanf("%d", &n);
     }
     while (n < 1);
 

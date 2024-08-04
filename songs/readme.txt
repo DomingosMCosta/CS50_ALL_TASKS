@@ -1,0 +1,38 @@
+First make sure you have sqlite3 installed https://www.sqlite.org/download.html
+
+Then you can do the detective game yourself by starting with sqlite3 songs.db
+From here you can .schema TABLE_NAME or .tables just get an idea of the entire scenario.
+
+The purpose is to do the tasks mentioned below. You can try to do it youserlf, 
+otherwise you can go straight to the each .sql where you can see my answers (commands)
+
+tasks:
+In 1.sql, write a SQL query to list the names of all songs in the database.
+Your query should output a table with a single column for the name of each song.
+
+In 2.sql, write a SQL query to list the names of all songs in increasing order of tempo.
+Your query should output a table with a single column for the name of each song.
+
+In 3.sql, write a SQL query to list the names of the top 5 longest songs, in descending order of length.
+Your query should output a table with a single column for the name of each song.
+
+In 4.sql, write a SQL query that lists the names of any songs that have danceability, energy, and valence greater than 0.75.
+Your query should output a table with a single column for the name of each song.
+
+In 5.sql, write a SQL query that returns the average energy of all the songs.
+Your query should output a table with a single column and a single row containing the average energy.
+
+In 6.sql, write a SQL query that lists the names of songs that are by Post Malone.
+Your query should output a table with a single column for the name of each song.
+You should not make any assumptions about what Post Malone’s artist_id is.
+
+In 7.sql, write a SQL query that returns the average energy of songs that are by Drake.
+Your query should output a table with a single column and a single row containing the average energy.
+You should not make any assumptions about what Drake’s artist_id is.
+
+In 8.sql, write a SQL query that lists the names of the songs that feature other artists.
+Songs that feature other artists will include “feat.” in the name of the song.
+Your query should output a table with a single column for the name of each song.
+
+Reflect on the ways Spotify might use this same data in their annual 
+Spotify Wrapped campaign to characterize listeners’ habits. (answers.txt)
